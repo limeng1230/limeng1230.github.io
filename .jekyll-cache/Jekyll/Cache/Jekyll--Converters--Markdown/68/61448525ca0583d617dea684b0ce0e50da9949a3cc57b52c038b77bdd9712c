@@ -1,0 +1,317 @@
+I"�C<h2 id="kafka性能">kafka性能</h2>
+
+<h3 id="生产者的吞吐量">生产者的吞吐量</h3>
+
+<p><img src="/Users/maoyanyule/Documents/depth/clever/typora/kafka/image-20200429221404283.png" alt="image-20200429221404283" /></p>
+
+<h4 id="kafka的性能高">kafka的性能高</h4>
+
+<p>约80万records/sec。对于随机存储的数据系统（数据库、KV系统）来说，我们常见的吞吐量是5000-50000 qps, 和一个比较好的PRC可以接受和处理的速度差不多。但是kafka超越了这个数量。</p>
+
+<p>两条原因：</p>
+
+<blockquote>
+  <ol>
+    <li>线性磁盘IO。 线性磁盘IO，大约能够保证822 MB/sec的吞吐量。这实际上远远超出了我们仅使用1千兆网卡所能利用的范围。许多消息传递系统将持久性视为一个昂贵的附加操作，它会降低性能，应该只少量使用，但这是因为它们不能执行线性I/O。</li>
+    <li>在每一个阶段，我们都会将少量的数据批处理到更大的网络和磁盘I/O操作中。例如，在新的producer中，我们使用类似“group commit”的机制来确保在另一个I/O正在进行时发起的任何记录都被分组在一起。</li>
+  </ol>
+</blockquote>
+
+<h4 id="同步速度">同步速度</h4>
+
+<p>从单个生产者 -&gt; 单个生产者+3个同步副本 ， 吞吐量从82万到78万。几乎没有下降。做实验的人旨在告诉我们，kafka的同步是很快的。</p>
+
+<h3 id="存储量级是否会影响到生产者的吞吐量">存储量级是否会影响到生产者的吞吐量</h3>
+
+<p>许多消息传递系统的一个隐患是，只有当它们保留的数据可以放到内存的时候，它们才能正常工作。当数据备份时，它们的吞吐量会下降一个数量级（或更多），并且不会被消费（因此需要存储在磁盘上）。</p>
+
+<p>这意味着，只要你的消费者保持正常，系统中的队列是空的，事情就可以正常运行，但一旦它们延迟，整个消息传递层就会将未使用的数据备份。备份会导致数据进入磁盘，进而导致性能下降。这意味着消息传递系统无法再跟上生成者的速度，或者备份，或者崩溃。这非常糟糕，因为在许多情况下，队列的全部目的是优雅地处理这样的情况。</p>
+
+<p>由于Kafka始终保持消息，因此对于未使用的数据量，性能为O（1）。</p>
+
+<p><img src="../../../assets/kafka/image-20200312204745437.png" alt="image-20200312204745437" /></p>
+
+<p>做测试的人对于波动的解释：同步磁盘的操作，定期刷新数据.</p>
+
+<ol>
+  <li>虽然消息写入是磁盘顺序写入，没有磁盘寻道的开销，但是如果针对每条消息都执行一次磁盘写入，则也会造成大量的磁盘IO，影响性能。</li>
+  <li>所以在消息写入方面，broker基于MMAP技术，即内存映射文件，将消息先写入到操作系统的页缓存中，由页缓存直接映射到磁盘文件，不需要在用户空间和内核空间直接拷贝消息，所以也可以认为消息传输是发送在内存中的。</li>
+  <li>由于是先将消息写入到操作系统的页缓存，而页缓存数据刷新同步sync到磁盘文件是由操作系统来控制的，即操作系统通过一个内核后台线程，每5秒检查一次是否需要将页缓存数据同步到磁盘文件，如果超过指定时间或者超过指定大小则将页缓存数据同步到磁盘。所以如果在刷新到磁盘文件之前broker机器宕机了，则会导致页缓存的数据丢失。</li>
+  <li>使用页缓存的另外一个好处是，如果重启了kafka服务端（这个服务重启，而不是机器重启），页缓存中的数据还是可以继续使用的。</li>
+</ol>
+
+<h3 id="消费者的吞吐量">消费者的吞吐量</h3>
+
+<p>作者同样对单个消费者，多个消费者可以消费的记录做了一个对比测试，几乎接近线性的缩放比例（这并不奇怪，因为模型中的消耗是如此简单）</p>
+
+<p>使消费变得简单和容易是kafka很重要的一件事。一方面，副本本身就是消费者，因此使消费者简单会使复制简单。另外，这使得处理数据成为一种廉价的操作。</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">handleFetchRequest</span><span class="o">{</span>
+   <span class="nf">if</span> <span class="o">(</span><span class="nv">fetchRequest</span><span class="o">.</span><span class="py">isFromFollower</span><span class="o">)</span> <span class="o">{</span>
+     	<span class="o">.....</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="o">....</span>
+      <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="消息大小的影响">消息大小的影响</h3>
+
+<p>目的：看消息大小是否会影响到吞吐量。</p>
+
+<p><img src="../../../assets/kafka/image-20200312205445335.png" alt="image-20200312205445335" /></p>
+
+<p>我们每秒可以发送的原始记录数随着记录的增加而减少。但是，如果我们看MB/秒，我们会发现，随着消息变大，实际用户数据的总字节吞吐量会增加。</p>
+
+<h3 id="端到端的延迟">端到端的延迟</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>2毫秒（中位数）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3毫秒（第99个百分位数）</td>
+    </tr>
+    <tr>
+      <td>14毫秒（百分之99.9）</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>前面都是已经讨论了很多吞吐量，但是消息传递的延迟是多少？也就是说，我们发送给消费者的消息要花多长时间？对于此测试，我们将创建生产者和消费者，并反复计时生产者将消息发送到kafka集群然后被我们的消费者接收所花费的时间。</p>
+
+<h3 id="复现上面的测试">复现上面的测试</h3>
+
+<p>作者称主要只是使用了Kafka附带的预打包性能测试工具，并且大部分都使用服务器和客户机的默认配置。</p>
+
+<h2 id="kafka的可靠性">Kafka的可靠性</h2>
+
+<p>可靠性可以从两个方面看：</p>
+
+<p>使用：使用者使用服务的可靠性</p>
+
+<p>底层：中间件自己本身的可靠性</p>
+
+<p>这次分享只关心使用角度的可靠性。</p>
+
+<h2 id="使用角度的可靠性">使用角度的可靠性</h2>
+
+<p><img src="../../../assets/kafka/kafka可靠性.png" alt="kafka可靠性" /></p>
+
+<ol>
+  <li>消息发送</li>
+  <li>消息接收</li>
+  <li>消息存储</li>
+</ol>
+
+<h3 id="如何保证接收到了我发送的消息kafka接收了">如何保证接收到了我发送的消息Kafka接收了？</h3>
+
+<blockquote>
+  <p>第一步：按照实际需要 设置 不同的保证级别</p>
+</blockquote>
+
+<p><img src="../../../assets/kafka/生产者.png" alt="生产者" /></p>
+
+<blockquote>
+  <p>第二步，我设置了ack=1, 但是 leader副本挂了、网络等原因，导致失败，怎么办?</p>
+</blockquote>
+
+<p>retries（用来配置生产者重试的次数）和retry.backoff.ms（用来设定两次重试之间的间隔时间，避免无效的频繁重试）</p>
+
+<p>retries的具体实现参考（Sender类）</p>
+
+<p>什么是可重试的/临时性的异常： 网络抖动，leader副本选举等可恢复。</p>
+
+<p>什么是不可重试的：消息的大小超过max.request.size</p>
+
+<blockquote>
+  <p>第三步，如果重试之后，仍然失败，怎么处理</p>
+</blockquote>
+
+<p>可以采用同步或者异步的方式关心消息发送的结果。</p>
+
+<h3 id="如何保证我的消息kafka可以存储起来">如何保证我的消息Kafka可以存储起来？</h3>
+
+<p><strong>副本机制</strong></p>
+
+<p>1、提供数据冗余</p>
+
+<p>系统部分组件失效，系统依然能够继续运转，因而增加了整体可用性以及数据持久性</p>
+
+<p>2、提供高伸缩性</p>
+
+<p>支持横向扩展，能够通过增加机器的方式来提升读性能，进而提高读操作吞吐量</p>
+
+<p>3、改善数据局部性</p>
+
+<p>允许将数据放入与用户地理位置相近的地方，从而降低系统延时。</p>
+
+<p>Kafka目前的副本机制，有两个能力：<strong>数据冗余妨丢失，功能冗余提供备份</strong></p>
+
+<h4 id="回顾下kafka中的副本">回顾下Kafka中的副本</h4>
+
+<p>Assigned Replicas ： 所有的副本</p>
+
+<p>ISR（In-Sync Replicas，与 Leader 数据同步的 Replica）</p>
+
+<p>OSR（Outof-Sync Replicas）</p>
+
+<p>分区副本机制，使得kafka既可以提供<strong>数据副本</strong>妨丢失，也可以提供<strong>服务副本做备份</strong>.</p>
+
+<h5 id="分区分配方法">分区分配方法</h5>
+
+<blockquote>
+  <p>1、 将所有Broker（假设共n个Broker）和待分配的Partition排序
+2、 将第i个Partition分配到第（i mod n）个Broker上
+3、 将第i个Partition的第j个Replica分配到第（(i + j) mode n）个Broker上</p>
+</blockquote>
+
+<p>可参考kafka.admin.AdminUtils#assignReplicasToBrokersRackUnaware</p>
+
+<h5 id="如何判断一个副本是否失效">如何判断一个副本是否失效</h5>
+
+<p>初始情况下，所有的 Replica 都在 ISR 中，但在 Kafka 工作过程中，由于各种问题（网络、磁盘、内存）可能导致部分 Replica 的同步速度慢于参数 <code class="highlighter-rouge">replica.lag.time.max.ms</code> 指定的阈值，一旦出现这种情况，这部分 Replica 会被移出 ISR，降级至 OSR 中。</p>
+
+<blockquote>
+  <p><strong>replica.lag.time.max.ms</strong></p>
+
+  <p>数据类型为 Long，默认值为 10000，重要性为 High，官方解释如下：</p>
+
+  <p>If a follower hasn’t sent any fetch requests or hasn’t consumed up to the leaders log end offset for at least this time, the leader will remove the follower from ISR.</p>
+</blockquote>
+
+<p>即在10s内，如果发生以下两种情况，一个副本就会被移除ISR</p>
+
+<ul>
+  <li>当一个副本没有发送任何 fetch request</li>
+  <li>没有消费到leader LEO</li>
+</ul>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">getOutOfSyncReplicas</span><span class="o">(</span><span class="n">maxLagMs</span><span class="k">:</span> <span class="kt">Long</span><span class="o">)</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="cm">/**
+     * If the follower already has the same leo as the leader, it will not be considered as out-of-sync,
+     * otherwise there are two cases that will be handled here -
+     * 1. Stuck followers: If the leo of the replica hasn't been updated for maxLagMs ms,
+     *                     the follower is stuck and should be removed from the ISR
+     * 2. Slow followers: If the replica has not read up to the leo within the last maxLagMs ms,
+     *                    then the follower is lagging and should be removed from the ISR
+     * Both these cases are handled by checking the lastCaughtUpTimeMs which represents
+     * the last time when the replica was fully caught up. If either of the above conditions
+     * is violated, that replica is considered to be out of sync
+     *
+     **/</span>
+    <span class="k">val</span> <span class="nv">candidateReplicaIds</span> <span class="k">=</span> <span class="n">inSyncReplicaIds</span> <span class="o">-</span> <span class="n">localBrokerId</span>
+    <span class="k">val</span> <span class="nv">currentTimeMs</span> <span class="k">=</span> <span class="nv">time</span><span class="o">.</span><span class="py">milliseconds</span><span class="o">()</span>
+    <span class="k">val</span> <span class="nv">leaderEndOffset</span> <span class="k">=</span> <span class="nv">localLogOrException</span><span class="o">.</span><span class="py">logEndOffset</span>
+    <span class="nv">candidateReplicaIds</span><span class="o">.</span><span class="py">filter</span><span class="o">(</span><span class="n">replicaId</span> <span class="k">=&gt;</span> <span class="nf">isFollowerOutOfSync</span><span class="o">(</span><span class="n">replicaId</span><span class="o">,</span> <span class="n">leaderEndOffset</span><span class="o">,</span> <span class="n">currentTimeMs</span><span class="o">,</span> <span class="n">maxLagMs</span><span class="o">))</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="isr的伸缩">ISR的伸缩</h4>
+
+<p>两个定时任务检测是否需要缩减或者扩充ISR集合</p>
+
+<p>Isr-expiration: 周期性( <a href="http://replica.lag.time.max.ms">replica.lag.time.max.ms</a> 的一半）的检测每个分区是否需要缩减ISR集合</p>
+
+<p>Isr-change-propagation：向其他的broker传播ISR的变动消息</p>
+
+<p>当leader处理完来自follow的fetch请求后，会更新对应Replica对象的_lastCaughtUpTimeMs，然后判断是否要把此Replica加进ISR中(可能之前这个replica没在ISR中)，最后尝试推进HW。</p>
+
+<p><img src="../../../assets/kafka/ISR的伸缩 (2).jpg" alt="ISR的伸缩" /></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. follower fetch时leader副本更新follower状态， 代码入口kafka.server.KafkaApis#handleFetchRequest
+2. 定时任务检查是否有ISR集合，见kafka.server.ReplicaManager#maybeShrinkIsr
+3. kafka控制器会接收到ZK的IsrChangeNotification变更，处理processIsrChangeNotification
+</code></pre></div></div>
+
+<h4 id="isr与使用者有什么关系">ISR与使用者有什么关系</h4>
+
+<p>不能排除leader节点宕机的情况，因此存在leader选举机制。每个follower副本的状态都不一样，如果一个严重落后的follower副本被选举为leader。 那么就会加剧<strong>消息丢失</strong>的情况。因此从ISR中选举leader，则是一个比较好的权衡策略。</p>
+
+<p><code class="highlighter-rouge">unclean.leader.election.enable=false</code></p>
+
+<h4 id="回顾下leo与hw">回顾下LEO与HW</h4>
+
+<p><img src="../../../assets/kafka/image-20200430114002964.png" alt="image-20200430114002964" /></p>
+
+<p>####leader宕机情况下的数据丢失和不一致的场景</p>
+
+<h5 id="leo与hw的推进">LEO与HW的推进</h5>
+
+<p><img src="../../../assets/kafka/LEO与HW的更新.jpg" alt="LEO与HW的更新" /></p>
+
+<h5 id="基于hw同步造成数据丢失和数据不一致场景">基于HW同步，造成数据丢失和数据不一致场景</h5>
+
+<p><img src="../../../assets/kafka/数据丢失的场景.png" alt="数据丢失的场景" /></p>
+
+<p><img src="../../../assets/kafka/数据不一致的场景.png" alt="数据不一致的场景" /></p>
+
+<h4 id="使用领导者纪元解决丢失和不一致的问题">使用领导者纪元解决丢失和不一致的问题</h4>
+
+<p>0.11.0.0版本之后</p>
+
+<p><img src="../../../assets/kafka/纪元-应对数据丢失和不一致的场景.png" alt="纪元-应对数据丢失和不一致的场景" /></p>
+
+<p><img src="../../../assets/kafka/纪元-应对不一致的场景.png" alt="纪元-应对不一致的场景" /></p>
+
+<blockquote>
+
+  <p>核心： 利用HW 和 LEO 的错误来缩小问题范围。</p>
+
+  <p>当follower选举为leader时：</p>
+
+  <ol>
+    <li>
+      <p>如果 HW=21  &lt;  LEO=23  &lt;= 原leader的HW=23 &lt; 原leader的LEO=30，就会造成数据丢失的情况。</p>
+
+      <ol>
+        <li>
+          <p>如果基于HW截断，就会丢失【21,30】之间的数据</p>
+        </li>
+        <li>
+          <p>如果基于领导者纪元判断，会丢失【23，30】的数据</p>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>（follower被选举为节点是，le0=23）如果HW=30 &lt; LEO=30 &lt;= 原leader的HW=30 &lt; 原leader的LEO=30</p>
+
+      <ol>
+        <li>
+          <p>如果基于HW截断，就会导致【23，30】之间的数据不一致</p>
+        </li>
+        <li>
+          <p>如果基于领导者纪元判断，不会导致数据不一致。</p>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</blockquote>
+
+<p>总结：</p>
+
+<p>kafka 利用：副本机制、基于leaderEpoach来尽量解决数据丢失和不一致。</p>
+
+<p>另外，如性能部分所说kafka利用的页缓存技术会受到操作系统的影响。因此broker提供了 <a href="http://log.flush.interval.ms">log.flush.interval.ms</a> 和log.flush.interval.messages用来调整同步刷盘的策略</p>
+
+<h3 id="如何保证消费者成功消费到了我的数据">如何保证消费者成功消费到了我的数据</h3>
+
+<p>enable.auto.commit =false手动提交，避免重复消费和消息丢失的问题</p>
+
+<h2 id="参考文档">参考文档</h2>
+
+<p><a href="https://engineering.linkedin.com/kafka/benchmarking-apache-kafka-2-million-writes-second-three-cheap-machines?spm=a2c4e.10696291.0.0.6cdb19a4MXTpcQ">kafka的性能</a></p>
+
+<p><a href="https://www.cnblogs.com/cchust/p/4439107.html">组提交</a></p>
+
+<p><a href="https://www.cnblogs.com/monkeyteng/p/10221291.html">kafka的消息存储</a></p>
+
+<p><a href="https://www.jianshu.com/p/93277e510ca3">副本管理器</a></p>
+
+<p><a href="https://blog.51cto.com/13525470/2315452?cid=723173">kafka的高可用</a></p>
+
+<p><a href="https://www.jianshu.com/p/aed1326880f1">kafka解析之失效副本</a></p>
+:ET

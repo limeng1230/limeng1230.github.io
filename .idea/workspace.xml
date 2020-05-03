@@ -1,35 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0b043e4-8bc4-409b-8bcc-7182653c6714" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/maoyanyule.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/d/cd089ae45ce870c45e434019e8f1ed4f066cd425" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/texture-master.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/11/bd1e0c6d80aff1f20ede337289d09576f9b4f4210fc55c562a70029b0d648b" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/18/b8cd3c72ce8a76d9bf8b551bf78a7f7246a07e27551354a288070b1a154ed2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/1f/f5d09d495bbae88fadb19d6aee16a039a0e016c418a23239fe89952e337e16" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/21/bf3da664d3334af863c85ab31b9dfc62343676a6dc7239822162db0034d9f0" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/24/96a9b07a3c92d7894d08659fe566a0cee370182e8b79f74e9a327404d9f7eb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/54/4685384df9ecdaf296e57fb08c91fd1efdb2d5df875155f3f2e41b43fed7ae" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/54/b13dc6f38ab749647487654e988b39b43857c7a7fade812719351020cb2218" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/73/01295912323f861766d5bd27206882ceec306214498126094c7dcad0b2cfd8" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/94/83e3edbd40559d8d5d89bf8c0b7431fed72da9081b71eccc5307385c87eb67" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/96/c5e55af7bf6b34f4f4622597d86d1d3c617ea05d1cedebb1f73cd52b0ae0f0" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/9e/91346ff88ba56f18ebbcfb1885114bd1ac9d04bfc795a3d628dc6fda128fc4" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/b7/1f0ba7b6a38b34034ae5aeefd404b83f533f810164ca994a8306f608d1c957" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/bd/b0d7a281530a2238717eec8fee784684079f4d76ca8e4062635ef2e33afcf2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/cb/2f00d1e554baf96001ddb5e22ee63a8053fd3f8b6cad8acd74504af0dadb52" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/d9/513bb258be00edc7c1d219a701abc5afc883a02686e2ba8d66a76029f5f25e" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/e3/b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f1/0f064a5b15047a10318ef9e75c917e17f7884fbc8843fb3f4972f6d17a2a47" />
+    <list default="true" id="e0b043e4-8bc4-409b-8bcc-7182653c6714" name="Default" comment="kafka可靠性">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/36/83b031263b0f23c76ecd48cbc977afb91154444096a50e2b83f0adb601798f" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/55/3b04d7f4b67c1a15bad215692d37b90aa85d1ba50e095332ea6c2acce90fe8" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/68/61448525ca0583d617dea684b0ce0e50da9949a3cc57b52c038b77bdd9712c" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/88/e374d5ee472672870f826e55c3ce2639ef2ed3ae55d1aa29bbeabacab6a068" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/9f/96ac99946d659fc50ec88ede86fcdcafe5c47ee7dc3a18a1bf8c429f09ed19" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/e0/87a32190bdcaa6977bee249a44eb7389537881e497ac1f27a2528486ad6eb4" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/f7/64fc1e558c07f5305edf700fa2f220fee2c6646d0922df7bdcd93b2a683ec6" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/_posts/2020-05-01-kafka-ha.markdown" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/kafka/ISR的伸缩.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/kafka/LEO与HW的更新.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/kafka/image-20200429221404283.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/kafka/image-20200430114002964.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/kafka/kafka可靠性.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/kafka/数据不一致的场景.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/kafka/数据丢失的场景.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/kafka/生产者.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/kafka/纪元-应对不一致的场景.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/assets/kafka/纪元-应对数据丢失和不一致的场景.png" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910" />
+      <change beforePath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/54/4685384df9ecdaf296e57fb08c91fd1efdb2d5df875155f3f2e41b43fed7ae" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/d9/513bb258be00edc7c1d219a701abc5afc883a02686e2ba8d66a76029f5f25e" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,63 +34,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image-20200322164801751.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200322164801751.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2020-04-05-kafka-start.markdown" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_posts/2020-04-05-kafka-start.markdown">
+      <file leaf-file-name="2020-05-01-kafka-ha.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2020-05-01-kafka-ha.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="185">
-                <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-                <folding />
+              <first_editor relative-caret-position="159">
+                <caret line="51" column="37" lean-forward="false" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+                <folding>
+                  <marker date="1588510441000" expanded="true" signature="1661:1750" ph="(...)" />
+                  <marker date="1588510441000" expanded="true" signature="1699:1720" ph="{...}" />
+                  <marker date="1588510441000" expanded="true" signature="1726:1748" ph="{...}" />
+                  <marker date="1588510441000" expanded="true" signature="3906:4996" ph="{...}" />
+                  <marker date="1588510441000" expanded="true" signature="3912:4708" ph="/**...*/" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="image-20200322164938089.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200322164938089.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image-20200322165159007.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200322165159007.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="image-20200322165305852.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200322165305852.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_site/posts/kafka-start/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-              <folding />
+      <file leaf-file-name="2020-04-05-kafka-start.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2020-04-05-kafka-start.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="3" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -128,9 +93,9 @@
     </option>
     <option name="projectSyncType">
       <map>
-        <entry key="$PROJECT_DIR$/../depth/spring/spring-framework-5.0.4.RELEASE" value="PREVIEW" />
         <entry key="$USER_HOME$/IdeaProjects/code_repo/CodeMaker" value="PREVIEW" />
         <entry key="$USER_HOME$/IdeaProjects/code_repo/kafka" value="PREVIEW" />
+        <entry key="$USER_HOME$/depth/spring/spring-framework-5.0.4.RELEASE" value="PREVIEW" />
       </map>
     </option>
   </component>
@@ -140,6 +105,7 @@
         <option value="$PROJECT_DIR$/_posts/2020-04-05-kafka开篇分享.markdown" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_posts/2020-04-05-kafka-start.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2020-05-01-kafka-ha.markdown" />
       </list>
     </option>
   </component>
@@ -149,7 +115,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="873" />
@@ -501,122 +467,37 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
+              <item name="limeng1230.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="limeng1230.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name=".jekyll-cache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name=".jekyll-cache" type="462c0819:PsiDirectoryNode" />
-              <item name="Jekyll" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name=".jekyll-cache" type="462c0819:PsiDirectoryNode" />
-              <item name="Jekyll" type="462c0819:PsiDirectoryNode" />
-              <item name="Cache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="_includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="_layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
+              <item name="limeng1230.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="limeng1230.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="_posts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
+              <item name="limeng1230.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="limeng1230.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="style.css" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
-              <item name="posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="_site" type="462c0819:PsiDirectoryNode" />
-              <item name="posts" type="462c0819:PsiDirectoryNode" />
-              <item name="kafka-start" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="font" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
+              <item name="limeng1230.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="limeng1230.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="kafka" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="texture-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="texture-master" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="textures" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -628,6 +509,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="GO_FMT" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -748,14 +631,15 @@
       <updated>1586070369639</updated>
       <workItem from="1586070371154" duration="217000" />
       <workItem from="1586071622572" duration="3241000" />
+      <workItem from="1588509718839" duration="787000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3458000" />
+    <option name="totallyTimeSpent" value="4245000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -770,15 +654,15 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -787,6 +671,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -795,101 +680,31 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="kafka可靠性" />
+    <option name="LAST_COMMIT_MESSAGE" value="kafka可靠性" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20190928173756168.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191008173152734.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191008173517731.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191009100024052.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191010230236976.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191011101445583.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191012141646579.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191012141700772.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191028173501600.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191028174112107.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191030180416387.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191030180831230.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191102171426742.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191120223615558.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191121133941469.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191121194709791.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191121220300226.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191121225907201.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191008173517731.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191009100024052.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191010230236976.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191011101445583.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191012141646579.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191012141700772.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191028173501600.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191028174112107.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191030180416387.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191030180831230.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191102171426742.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191120223615558.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191121133941469.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191121194709791.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191121220300226.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191121225907201.png" />
     <entry file="file://$PROJECT_DIR$/assets/kafka/image-20191129135014167.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -990,6 +805,26 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323183327235.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323180048319.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323175921194.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323175558477.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323172710907.png" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323171258735.png" />
+    <entry file="file://$PROJECT_DIR$/_site/posts/kafka-start/index.html" />
+    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200322164801751.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200322164938089.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1000,58 +835,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323183327235.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323180048319.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323175921194.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323175558477.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323172710907.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200323171258735.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200322165305852.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_site/posts/kafka-start/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/kafka/image-20200322164801751.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1059,9 +843,31 @@
     <entry file="file://$PROJECT_DIR$/_posts/2020-04-05-kafka-start.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="185">
-            <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="3" />
             <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/kafka/数据丢失的场景.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2020-05-01-kafka-ha.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="159">
+            <caret line="51" column="37" lean-forward="false" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
+            <folding>
+              <marker date="1588510441000" expanded="true" signature="1661:1750" ph="(...)" />
+              <marker date="1588510441000" expanded="true" signature="1699:1720" ph="{...}" />
+              <marker date="1588510441000" expanded="true" signature="1726:1748" ph="{...}" />
+              <marker date="1588510441000" expanded="true" signature="3906:4996" ph="{...}" />
+              <marker date="1588510441000" expanded="true" signature="3912:4708" ph="/**...*/" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
